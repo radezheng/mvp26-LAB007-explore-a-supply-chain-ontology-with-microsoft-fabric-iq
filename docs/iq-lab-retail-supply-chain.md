@@ -69,6 +69,10 @@ A single Fabric notebook deploys all the artifacts you need for this lab, includ
 - A Lakehouse named **LHRetail** with supporting data
 - An ontology with entity types, relationship types, and data bindings
 
+Before you start, confirm that ontology is enabled for your tenant. If you don't see ontology options in Fabric, ask your tenant administrator to enable the Fabric IQ ontology preview setting.
+
+![Screenshot showing the tenant setting used to enable ontology capabilities in Fabric.](../images/1.prequsite-tenant-enable-ontology.png)
+
 ### Upload and run the setup notebook
 
 <!-- TODO: Add notebook source location (GitHub repo URL, pre-loaded workspace, or download link) -->
@@ -92,6 +96,8 @@ A single Fabric notebook deploys all the artifacts you need for this lab, includ
    > The graph refresh runs in the background and takes approximately 10–15 minutes to complete. You cannot accelerate this process. Continue to the next steps while it runs.
 
 1. Confirm that the notebook cells complete without errors. You should see success messages for each artifact creation step.
+
+   ![Screenshot showing the setup notebook running with Copilot available to help resolve an error.](../images/2.setup-notebook-with-copilot-resolve-error.png)
 
 ## Step 2: Understand IQ and ontology concepts
 
@@ -311,6 +317,8 @@ For the full GQL language reference in Fabric, see [GQL language guide](https://
 1. Select **Run** to execute the query.
 1. Review the results. The query returns customers from the southwest region whose orders included products in the household category. Notice how the GQL pattern mirrors the ontology relationships you explored earlier—each `[edge:RelationshipType]` corresponds to a relationship type you defined in the ontology.
 
+   ![Screenshot showing a sample ontology GQL query and its results.](../images/3.ontology-query-sample.png)
+
 > [!TIP]
 > As you review query results, pay attention to how GQL traverses relationships. The pattern `(node:EntityType)-[edge:RelationshipType]->(node:EntityType)` mirrors the ontology structure. This is the power of a graph-based semantic model—queries follow the natural structure of your business concepts.
 
@@ -343,6 +351,8 @@ Try the following questions one at a time. After entering each question, wait fo
 > What is the loyalty tier and lifetime value for Customer CUST000297?
 
 Review the response. The agent should return the customer's loyalty tier and lifetime value by querying through the ontology.
+
+![Screenshot showing a sample Fabric Data Agent response for a retail supply chain question.](../images/4.data-agent-sample.png)
 
 **Question 2:**
 
